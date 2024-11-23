@@ -39,7 +39,7 @@ document.querySelector("#skip").addEventListener("click", function () {
 	console.log("Skip ahead");
 	video.currentTime += 10;
 	console.log("Current location " + video.currentTime);
-	if (video.currentTime > - video.duration) {
+	if (video.currentTime >= video.duration) {
 		video.currentTime = 0;
 		console.log("Vedio Current Time is " + video.currentTime);
 	}
