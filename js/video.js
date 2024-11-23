@@ -44,3 +44,34 @@ document.querySelector("#skip").addEventListener("click", function () {
 		console.log("Vedio Current Time is " + video.currentTime);
 	}
 });
+
+// Mute video
+document.querySelector("#mute").addEventListener("click", function () {
+	if (video.muted) {
+		video.muted = false; // Unmute
+		this.textContent = "Mute"; // Update button text
+	} else {
+		video.muted = true; // Mute
+		this.textContent = "Unmute"; // Update button text
+	}
+	console.log("Muted:", video.muted);
+});
+
+// Volume Slider
+document.querySelector("#slider").addEventListener("input", function () {
+	video.volume = this.value / 100;
+	document.querySelector("#volume").textContent = Math.round(video.volume * 100) + "%";
+	console.log("Volume set to:", video.volume);
+});
+
+// Styled
+document.querySelector("#vintage").addEventListener("click", function () {
+	video.classList.add("oldSchool");
+	console.log("Added oldSchool styling");
+});
+
+// Original
+document.querySelector("#orig").addEventListener("click", function () {
+	video.classList.remove("oldSchool");
+	console.log("Removed oldSchool styling");
+});
